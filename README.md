@@ -16,12 +16,11 @@
 
 
 
-# Corda
-sudo chmod +x *.sh
+## To convert .sh files to executable
+
+### sudo chmod +x *.sh
 
 ## Download Required softwares-
-
-
 
 ## just hit below command in createNetwork directory
 
@@ -29,7 +28,7 @@ sudo chmod +x *.sh
 
 
 
-##or in Dependencies directory in createNetwork directry
+## Or in Dependencies directory in createNetwork directry (If you want to istall specifics)
 
 ### ./java-installation.sh
 
@@ -38,6 +37,7 @@ sudo chmod +x *.sh
 
 
 ### ./docker-compose-corda.sh
+
 ### ./downLoadNetworkBootStrapper.sh
 
 ### ./install-pip3-j2.sh
@@ -51,7 +51,8 @@ sudo chmod +x *.sh
 
 
 ## In createNetwork directory
-(To create network with some parties and notaries)
+
+##(To create network with some parties and notaries)
 
 ## ./main.sh 0.0.0.0 L=London,C=GB 3 1 validating
 
@@ -68,28 +69,27 @@ sudo chmod +x *.sh
 
 ## To add a node in existing network 
 
-###To add PartyNode
+## To add PartyNode
 
-### in addParty directory
+## in addParty directory
 
 ### ./addParty.sh 0.0.0.0 2 L=London,C=GB
 
 ###where 
+### first argument is ip
+### 2nd argument is index of party node (Will update it)  (If you want to create party2) above is the command
+### third argument is organization name and Locaion, (L=London,C=GB)
 
-###first argument is ip
-###2nd argument is index of party node (Will update it)  (If you want to create party2) above is the command
-###third argument is organization name and Locaion, (L=London,C=GB)
+## To add Notary Node
 
-### To add Notary Node
-
-### in addNotary directory
+## in addNotary directory
 
 ### ./addNotary.sh 0.0.0.0 2 L=London,C=GB validating
 
-###where 
-###first argument is ip
-###2nd argument is index of party node (Will update it)  (If you want to create notary2) above is the command
-###third argument is organization name and Locaion, (L=London,C=GB)
+### where 
+### first argument is ip
+### second argument is index of party node (Will update it)  (If you want to create notary2) above is the command
+### third argument is organization name and Locaion, (L=London,C=GB)
 ### fourth is validating or uniquenes
 
 
