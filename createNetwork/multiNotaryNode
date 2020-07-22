@@ -22,10 +22,10 @@ dataSourceProperties {
     dataSource.user = sa
     dataSource.password = ""
 }
-p2pAddress="notary$3:1$3207"
+p2pAddress="notary$3:10200"
 rpcSettings {
-    address="$1:1$3208"
-    adminAddress="$1:1$3209"
+    address="$1:10201"
+    adminAddress="$1:10202"
 }
 rpcUsers=[
     {
