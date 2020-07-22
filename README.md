@@ -2,6 +2,10 @@
 
 
 
+## Copy corda.jar file in this base directory manually.....  
+
+
+
 ## Open a new terminal
 
 
@@ -40,7 +44,11 @@ sudo chmod +x *.sh
 
 
 
+
+
 ## You only need to hit the below command with respective arguments.
+
+
 
 ## In createNetwork directory
 (To create network with some parties and notaries)
@@ -67,6 +75,7 @@ sudo chmod +x *.sh
 ### ./addParty.sh 0.0.0.0 2 L=London,C=GB
 
 ###where 
+
 ###first argument is ip
 ###2nd argument is index of party node (Will update it)  (If you want to create party2) above is the command
 ###third argument is organization name and Locaion, (L=London,C=GB)
