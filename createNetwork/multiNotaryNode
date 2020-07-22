@@ -1,0 +1,41 @@
+#!/bin/bash
+echo "Creating Node for Notary ----------"
+mkdir notary$3
+cd notary$3
+basedir=baseDirectory
+basedir=\"\$\{${basedir}\}\"
+cat > node.conf<< EOF
+devMode=false
+myLegalName="$2"
+keyStorePassword = "cordacadevpass"
+trustStorePassword = "trustpass"
+networkServices {
+    doormanURL = "http://localhost:8080"
+    networkMapURL = "http://localhost:8080"
+}
+notary {
+    validating=$4
+}
+dataSourceProperties {
+    dataSourceClassName = org.h2.jdbcx.JdbcDataSource
+    dataSource.url = "jdbc:h2:file:$basedir/persistence"
+    dataSource.user = sa
+    dataSource.password = ""
+}
+p2pAddress="notary$3:1$3207"
+rpcSettings {
+    address="$1:1$3208"
+    adminAddress="$1:1$3209"
+}
+rpcUsers=[
+    {
+        password=test
+        permissions=[
+            ALL
+        ]
+        user=user1
+    }
+]
+EOF
+echo "Successfully created Notary with IP - $1"
+cd ..
