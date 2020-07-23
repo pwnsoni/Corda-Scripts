@@ -10,10 +10,10 @@ services:
     ports:
       - "10009:10201"
       - "2222:2222"
-    network_mode: host
+    
     volumes:
       - ./party2/node.conf:/etc/corda/node.conf
       - ./party2/certificates:/opt/corda/certificates
       - ./party2/persistence:/opt/corda/persistence
-      - ./shared/cordapps:/opt/corda/cordapps
+      - ./party2/cordapps:/opt/corda/cordapps
 

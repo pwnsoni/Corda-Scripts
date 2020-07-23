@@ -34,7 +34,7 @@ fi
 if [ $flag == $flag1 ]
    then
        echo "*** Fourth Argument should be either uniqueness or validating only **** " 
-       echo "currently you passed " $5
+       echo "currently you passed " $4
        echo "***** Exitting ***** "
        exit
 fi
@@ -44,7 +44,7 @@ fi
 
 sudo cp -Rf corda.jar ./notary$partynodescount
 
-bash initialRegistration.sh notary$partynodescount
+./initialRegistration.sh notary$partynodescount $validating
 
 mkdir shared
 

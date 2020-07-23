@@ -10,7 +10,6 @@ services:
     ports:
       - "100{{3*n+3}}:10201"
       - "222{{n}}:2222"
-    network_mode: host
     volumes:
       - ./party{{n}}/node.conf:/etc/corda/node.conf
       - ./party{{n}}/certificates:/opt/corda/certificates

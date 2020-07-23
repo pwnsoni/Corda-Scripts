@@ -10,8 +10,8 @@ myLegalName="$2"
 keyStorePassword = "cordacadevpass"
 trustStorePassword = "trustpass"
 networkServices {
-    doormanURL = "http://localhost:8080"
-    networkMapURL = "http://localhost:8080"
+    doormanURL = "http://3.133.133.28:8080"
+    networkMapURL = "http://3.133.133.28:8080"
 }
 dataSourceProperties {
     dataSourceClassName = org.h2.jdbcx.JdbcDataSource

@@ -7,7 +7,7 @@ mkdir certificates
 
 echo "retrieving networ-root-truststore file from NMS"
 
-curl http://localhost:8080/network-map/truststore -o ./certificates/network-root-truststore.jks
+curl http://3.133.133.28:8080/network-map/truststore -o ./certificates/network-root-truststore.jks
 
 echo "Initial registration of the node "
 

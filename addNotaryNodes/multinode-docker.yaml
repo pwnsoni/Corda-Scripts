@@ -4,15 +4,15 @@ version: '3.6'
 
 services:
 
-  notary1:
+  notary2:
     image: corda/corda-zulu-java1.8-4.5
-    container_name: notary1
-    network_mode: host
+    container_name: notary2
     ports:
-      - "20006:10201"
+      - "20009:10201"
+    network_mode: host
     volumes:
-      - ./notary1/node.conf:/etc/corda/node.conf
-      - ./notary1/certificates:/opt/corda/certificates
-      - ./notary1/persistence:/opt/corda/persistence
+      - ./notary2/node.conf:/etc/corda/node.conf
+      - ./notary2/certificates:/opt/corda/certificates
+      - ./notary2/persistence:/opt/corda/persistence
       - ./shared/cordapps:/opt/corda/cordapps
 
