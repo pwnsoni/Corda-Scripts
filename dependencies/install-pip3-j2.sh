@@ -1,7 +1,7 @@
 
 echo "Install python 3"
 
-sudo apt-get install python3.6
+sudo apt-get install -y python3.6
 
 
 echo "Install pip3"
