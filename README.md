@@ -6,8 +6,7 @@
 
 ## Open a new terminal
 
-
-#### ./start-NMS.sh 
+./start-NMS.sh 
 
 Make sure NMS is up at localhost:8080 before hitting below commands!!!!!
 
