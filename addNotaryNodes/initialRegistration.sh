@@ -1,4 +1,8 @@
 
+# $1 --> directory name
+# $2 --> validating or not
+# $3 --> ipOfNMS
+
 cd $1
 
 
@@ -7,7 +11,7 @@ mkdir certificates
 
 echo "retrieving networ-root-truststore file from NMS"
 
-curl http://3.133.133.28:8080/network-map/truststore -o ./certificates/network-root-truststore.jks
+curl http://$3:8080/network-map/truststore -o ./certificates/network-root-truststore.jks
 
 echo "Initial registration of the node "
 

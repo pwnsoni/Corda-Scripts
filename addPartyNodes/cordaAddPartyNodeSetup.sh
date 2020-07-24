@@ -6,7 +6,7 @@
 # ./cordaMultiNodeSetup.sh $numberofPartyNodes $numberofNotaryNodes 
 
 
-printf "Corda MultiNode SetUp with one Notary"
+printf "Corda MultiNode SetUp with Party"
 
 
 

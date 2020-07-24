@@ -1,0 +1,44 @@
+#!/bin/bash
+echo "Creating Node for Party ----------"
+mkdir party$3
+cd party$3
+basedir=baseDirectory
+basedir=\"\$\{${basedir}\}\"
+cat > node.conf<< EOF
+devMode=false
+myLegalName="$2"
+keyStorePassword = "cordacadevpass"
+trustStorePassword = "trustpass"
+networkServices {
+    doormanURL = "http://$5:8080"
+    networkMapURL = "http://$4:8080"
+}
+dataSourceProperties {
+    dataSourceClassName = org.h2.jdbcx.JdbcDataSource
+    dataSource.url = "jdbc:h2:file:$basedir/persistence"
+    dataSource.user = sa
+    dataSource.password = ""
+}
+cordappSignerKeyFingerprintBlacklist = []
+p2pAddress="0.0.0.0:10200"
+rpcSettings {
+    address="$1:10201"
+    adminAddress="$1:10202"
+}
+rpcUsers=[
+    {
+        password=test
+        permissions=[
+            ALL
+        ]
+        user=user1
+    }
+]
+sshd {
+    port = 2222
+}
+
+EOF
+echo "Successfully created Party Node with IP - $1"
+cd ..
+

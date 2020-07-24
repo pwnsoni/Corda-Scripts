@@ -1,5 +1,5 @@
 
-# ./addNotary.sh 0.0.0.0 2 L=London,C=GB validating
+# ./addNotary.sh 0.0.0.0 2 L=London,C=GB validating #IpOfNMS #IpOfDoorman
 
 # $1 ---> 0.0.0.0
 # $2 ---> 3,
@@ -11,6 +11,8 @@ sudo cp -Rf ../corda.jar .
 legalname="O=notary""$2",$3
 nodeip=$1
 partynodescount=$2
+ipOfNMS=$5
+ipOfDoorman=$6
 
 validating="validating"
 uniqueness="uniqueness"
@@ -40,11 +42,11 @@ if [ $flag == $flag1 ]
 fi
 
 
-./multiNotaryNode $nodeip $legalname $partynodescount $validating
+./multiNotaryNode $nodeip $legalname $partynodescount $validating $ipOfNMS $ipOfDoorman
 
 sudo cp -Rf corda.jar ./notary$partynodescount
 
-./initialRegistration.sh notary$partynodescount $validating
+./initialRegistration.sh notary$partynodescount $validating $ipOfNMS
 
 mkdir shared
 

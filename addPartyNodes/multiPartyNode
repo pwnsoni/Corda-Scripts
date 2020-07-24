@@ -10,8 +10,8 @@ myLegalName="$2"
 keyStorePassword = "cordacadevpass"
 trustStorePassword = "trustpass"
 networkServices {
-    doormanURL = "http://3.133.133.28:8080"
-    networkMapURL = "http://3.133.133.28:8080"
+    doormanURL = "http://$5:8080"
+    networkMapURL = "http://$4:8080"
 }
 dataSourceProperties {
     dataSourceClassName = org.h2.jdbcx.JdbcDataSource
@@ -19,10 +19,11 @@ dataSourceProperties {
     dataSource.user = sa
     dataSource.password = ""
 }
-p2pAddress="party$3:10$300"
+cordappSignerKeyFingerprintBlacklist = []
+p2pAddress="$1:10200"
 rpcSettings {
-    address="$1:10$301"
-    adminAddress="$1:10$302"
+    address="0.0.0.0:10201"
+    adminAddress="0.0.0.0:10202"
 }
 rpcUsers=[
     {

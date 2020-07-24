@@ -1,0 +1,17 @@
+{% set n = noOfNotary | int %}
+
+version: '3.6'
+
+services:
+
+  notary{{n}}:
+    image: corda/corda-zulu-java1.8-4.5
+    container_name: notary{{n}}
+    ports:
+      - "2000{{3*n+3}}:10201"
+    volumes:
+      - ./notary{{n}}/node.conf:/etc/corda/node.conf
+      - ./notary{{n}}/certificates:/opt/corda/certificates
+      - ./notary{{n}}/persistence:/opt/corda/persistence
+      - ./shared/cordapps:/opt/corda/cordapps
+
