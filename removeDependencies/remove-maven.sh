@@ -1,1 +1,1 @@
-sudo apt-get remove maven
+sudo apt-get -y remove maven

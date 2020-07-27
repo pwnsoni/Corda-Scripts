@@ -42,7 +42,7 @@ if [ $flag == $flag1 ]
 fi
 
 
-./multiNotaryNode $nodeip $legalname $partynodescount $validating $ipOfNMS $ipOfDoorman
+ ./multiNotaryNode $nodeip $legalname $partynodescount $validating $ipOfNMS $ipOfDoorman
 
 sudo cp -Rf corda.jar ./notary$partynodescount
 
